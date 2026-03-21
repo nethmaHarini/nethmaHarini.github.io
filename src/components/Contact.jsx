@@ -71,7 +71,7 @@ const Contact = () => {
               <input
                 name="from_name"
                 className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-white"
-                placeholder="John Doe"
+                placeholder="Enter your full name here"
                 type="text"
                 required
               />
@@ -84,7 +84,7 @@ const Contact = () => {
               <input
                 name="from_email"
                 className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-white"
-                placeholder="john@company.com"
+                placeholder="Enter your email here"
                 type="email"
                 required
               />
