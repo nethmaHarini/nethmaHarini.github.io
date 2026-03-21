@@ -1,4 +1,14 @@
 const Hero = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <section className="flex flex-col md:flex-row items-center gap-12 px-6 py-20 md:py-32">
       <div className="flex-1 space-y-8 order-2 md:order-1 text-center md:text-left">
@@ -14,10 +24,16 @@ const Hero = () => {
           </p>
         </div>
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          <button className="btn-lift px-8 py-4 bg-primary text-white font-bold rounded shadow-lg shadow-primary/20 transition-all">
+          <button
+            className="btn-lift px-8 py-4 bg-primary text-white font-bold rounded shadow-lg shadow-primary/20 transition-all"
+            onClick={() => scrollToSection('projects')}
+          >
             View My Projects
           </button>
-          <button className="btn-lift px-8 py-4 border border-primary/50 text-white font-bold rounded hover:bg-primary/10 transition-all">
+          <button
+            className="btn-lift px-8 py-4 border border-primary/50 text-white font-bold rounded hover:bg-primary/10 transition-all"
+            onClick={() => scrollToSection('contact')}
+          >
             Let's Connect
           </button>
         </div>

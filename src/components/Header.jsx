@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,13 +78,17 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-4">
-            <button className="p-2 rounded-full hover:bg-white/5 transition-colors">
-              <span className="material-symbols-outlined text-xl text-white">
-                light_mode
+            <button
+              className="p-2 rounded-full hover:bg-white/5 dark:hover:bg-white/5 hover:bg-black/5 transition-all duration-300 group"
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+            >
+              <span className="material-symbols-outlined text-xl text-white dark:text-white text-slate-900 group-hover:text-primary transition-colors duration-300">
+                {theme === 'dark' ? 'light_mode' : 'dark_mode'}
               </span>
             </button>
             <button className="md:hidden p-2">
-              <span className="material-symbols-outlined text-white">menu</span>
+              <span className="material-symbols-outlined text-white dark:text-white text-slate-900">menu</span>
             </button>
           </div>
         </div>
