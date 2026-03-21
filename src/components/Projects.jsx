@@ -1,0 +1,95 @@
+const Projects = () => {
+  const projects = [
+    {
+      title: 'Global E-commerce Rollout',
+      description: 'Led cross-functional teams to launch a multi-region platform.',
+      tags: ['Project Planning', 'Agile'],
+      image:
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuBWDG2A0bpz1k7P-KsLbcdiB-pUg2wbK5iuHdjBRCcR-jafOfaH-4SVOk0k1N66GyfFH70xJraHO4mmxy7mx78TOgK7C-HqpsRfiKJvqVRzLWMUOJan_ubwcWdAT6TG-PO-IxgP0Et3Tn_dPFTBfmNFFyJN8Ed1Bcuu5zX6hXsQSRukcPQecP59iGwRVSOwjogBQn6G7JSvK1zhQ3il6OhBq_1ncffjZreiR6ksZSiOqXmEdp2CLSmImJyuvpm97MLRmnTXvmVoOD0g',
+      stats: '10k+ active users',
+      status: 'Live Now',
+    },
+    {
+      title: 'Business Intelligence Strategy',
+      description: 'Defined KPIs and strategic roadmap for enterprise analytics.',
+      tags: ['Stakeholder Communication', 'Strategy'],
+      image:
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuDsfbmIK08mzNkphU25ubTLAhSZqe0G3wIphdd17QkIodM6VAKVPYvf_ceWCNOHmF8oPoSpuaK74X8rBa4hzAOedjHhIn_VtJ39A7hmCJeyErqi2DIChEFyoOWBJqlWVmnILTTFpasVrHvx_NSb7TddyCAjasVwPInh7e62KOVdogWqcwIpYV4yrNBcNdF7Ff7p2kd7XTCbxH9fmCU6pMfKMkw8TASFZfL1isLXFuc0iAWZsrg8ZYB8Tq5QudV7SozCVS5W3XckrY0b',
+      stats: '99.9% uptime achieved',
+      status: 'Enterprise',
+    },
+    {
+      title: 'FinTech Product Launch',
+      description: 'Managed end-to-end delivery of a mobile payment solution.',
+      tags: ['Team Leadership', 'Scrum'],
+      image:
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuD8rWk7Bv2pLURorRoamfdbrwRk1-rJhj4n8yPDRkxi0ozW3CCzdH6TZGN_Xx2DxNspdpEc_pqPTdCFZjHv7ZfBfdR1TnXMmNTHHiMr3zE-FVF-Nb7m97GWEyyIJq3u6y5hPTlLjT6hspLgDxJN0_lkAIleiRaceCSQjHwaua6rBrPvhAqRFQuyWZ0G573mvJjkpwZOoXysCa8GZJF9f7AEE5RXBGLOZ5gDTjOXw5dcynXKGh9GMjzgiX80ZyBIiHxrsRx0ZA1mNtrf',
+      stats: '5k+ App Store downloads',
+      status: 'Public',
+    },
+  ];
+
+  return (
+    <section className="px-6 py-20 space-y-12" id="projects">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div className="space-y-2">
+          <h2 className="text-4xl font-bold text-white tracking-tight">
+            Featured Projects
+          </h2>
+          <p className="text-slate-400">
+            A selection of my recent leadership and strategic endeavors.
+          </p>
+        </div>
+        <a
+          className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all"
+          href="#"
+        >
+          View All <span className="material-symbols-outlined">arrow_forward</span>
+        </a>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="group card-hover flex flex-col bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300"
+          >
+            <div
+              className="h-48 bg-cover bg-center overflow-hidden"
+              style={{
+                backgroundImage: `url("${project.image}")`,
+              }}
+            >
+              <div className="w-full h-full bg-black/40 group-hover:bg-transparent transition-all"></div>
+            </div>
+
+            <div className="p-6 space-y-4">
+              <div>
+                <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                <p className="text-sm text-slate-400">{project.description}</p>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag, tagIndex) => (
+                  <span
+                    key={tagIndex}
+                    className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 border border-primary/30 rounded-full text-primary"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="pt-4 border-t border-white/10 flex justify-between items-center text-xs text-slate-500 font-medium">
+                <span>{project.stats}</span>
+                <span className="text-primary">{project.status}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
