@@ -19,16 +19,24 @@ const About = () => {
                 <div className="w-16 h-1 bg-primary"></div>
               </div>
 
-              <p className="text-2xl md:text-3xl text-white font-medium leading-tight">
-                I transform complex ideas into structured, goal-driven outcomes
-                through strategic leadership.
+              <p className="text-lg leading-relaxed text-slate-200">
+                I focus on delivering projects through clear planning, structured execution, and consistent coordination.
               </p>
 
               <p className="text-lg leading-relaxed text-slate-200">
-                Bridging the gap between ambitious vision and operational
-                reality. I focus on high-impact execution, data-driven decision
-                making, and empowering cross-functional teams to deliver
-                excellence.
+                As an aspiring Project Manager, I am committed to organizing complex requirements into actionable plans,
+                aligning team efforts, and ensuring steady progress from initiation to delivery. I emphasize clarity in
+                communication, accountability in execution, and efficiency in every stage of the project lifecycle.
+              </p>
+
+              <p className="text-lg leading-relaxed text-slate-200">
+                Through my experience with system-based projects, I have developed the ability to manage workflows,
+                adapt to changing requirements, and maintain focus on achieving defined objectives.
+              </p>
+
+              <p className="text-lg leading-relaxed text-slate-200">
+                My goal is to grow as a Project Manager who ensures projects are delivered on time, aligned with objectives,
+                and capable of creating measurable value.
               </p>
             </div>
 
