@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#db143c",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(219, 20, 60, 0.15) 0%, transparent 70%);
+        }
+        .card-hover:hover {
+            border-color: rgba(219, 20, 60, 0.5);
+            box-shadow: 0 0 25px rgba(219, 20, 60, 0.3);
+        }
+        .neon-red-hover:hover {
+            box-shadow: 0 0 15px rgba(219, 20, 60, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 transition-colors duration-300 dark:text-white">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="fixed top-0 z-50 w-full glass border-b border-slate-200/10 px-6 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-2 group cursor-pointer">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">terminal</span>
+</div>
+<h2 class="text-xl font-bold tracking-tight">Alex Rivera</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#home">Home</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#about">About</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Projects</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full glass hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-sm">light_mode</span>
+</button>
+<button class="md:hidden p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex flex-col items-center justify-center px-6 text-center hero-glow" id="home">
+<div class="absolute inset-0 z-0">
+<div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+</div>
+<div class="relative z-10 space-y-6 max-w-4xl">
+<span class="px-4 py-1.5 rounded-full glass text-xs font-semibold tracking-widest uppercase text-primary border border-primary/30">Available for Freelance</span>
+<h1 class="text-6xl md:text-8xl font-black tracking-tighter text-slate-900 dark:text-white">
+                        Alex Rivera
+                    </h1>
+<p class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light max-w-2xl mx-auto">
+<span class="text-primary font-medium italic">Software Developer / AI Enthusiast.</span> Building the future of digital experiences with code and creativity.
+                    </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+<button class="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary/80 text-white rounded-xl font-bold transition-all transform hover:scale-105 neon-red-hover">
+                            View Projects
+                        </button>
+<button class="w-full sm:w-auto px-8 py-4 glass hover:bg-white/10 rounded-xl font-bold transition-all border border-white/20">
+                            Contact Me
+                        </button>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-24 px-6 max-w-7xl mx-auto" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<div class="space-y-8">
+<div class="relative inline-block">
+<h2 class="text-4xl font-bold">About Me</h2>
+<div class="absolute -bottom-2 left-0 w-12 h-1 bg-primary rounded-full"></div>
+</div>
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                            With over 6 years of experience in the tech industry, I specialize in building scalable web applications and integrating cutting-edge AI models. Based in San Francisco, I'm passionate about the intersection of intuitive UI design and robust backend architecture.
+                        </p>
+<!-- Career Motivation Glass Card -->
+<div class="glass p-8 rounded-2xl border-l-4 border-l-primary">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">psychology</span>
+<h3 class="text-xl font-bold mb-2">Career Motivation</h3>
+<p class="text-slate-600 dark:text-slate-400">
+                                Driven by the challenge of translating complex human needs into seamless digital solutions. I believe AI shouldn't just be powerful—it should be accessible and human-centric.
+                            </p>
+</div>
+</div>
+<!-- Experience Timeline -->
+<div class="space-y-8">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-primary">work</span>
+<h3 class="text-2xl font-bold">Experience</h3>
+</div>
+<div class="space-y-0 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-slate-700 before:to-transparent">
+<!-- Timeline Item 1 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active py-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-primary bg-background-light dark:bg-background-dark text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<span class="material-symbols-outlined text-sm">rocket_launch</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 rounded-xl">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold">Senior Software Engineer</div>
+<time class="text-xs font-medium text-primary uppercase">2021 - Present</time>
+</div>
+<div class="text-slate-500 text-sm italic mb-2">TechNova Solutions</div>
+<div class="text-slate-400 text-sm">Leading the AI integration team and core product architecture.</div>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active py-4">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-background-light dark:bg-background-dark text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<span class="material-symbols-outlined text-sm">code</span>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass p-6 rounded-xl">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold">Full Stack Developer</div>
+<time class="text-xs font-medium text-primary uppercase">2018 - 2021</time>
+</div>
+<div class="text-slate-500 text-sm italic mb-2">CloudStream Systems</div>
+<div class="text-slate-400 text-sm">Developed and optimized high-traffic dashboard features for 500k+ users.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="py-24 bg-slate-100/30 px-6 dark:bg-white/[0.02]" id="projects">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-4xl font-bold">Featured Projects</h2>
+<p class="text-slate-500 max-w-2xl mx-auto">A selection of recent works involving neural networks, real-time data, and high-performance UI.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project Card 1 -->
+<div class="glass rounded-2xl overflow-hidden group card-hover transition-all duration-300">
+<div class="h-48 bg-slate-800 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Abstract AI neural network visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6WZybQR-189u5ys3LmZtYKALdyZIzYn3tQeOPHu_Uuh8WZNM233jMo1byRlulUabfH_40b14I4Hxk5troZ0qx0TQ27UuvhEuZCDibrAOqXvUrVg_YNJvRFYgNWZX5VxLRpc4sa3NwyVuKlDNpbiX_RGJAAxZq-A_5ffK38gzQuHkvBugmEeqLsv51gXUaeM4F_9dEgDOlA2MkWO3dCtwKO5Iaaay7ZUKz8B3UcPAHpf_yd2xdfCFpvzrbeRHESwc9Yd2UL1wtocLL"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">visibility</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex gap-2">
+<span class="text-[10px] font-bold px-2 py-1 rounded bg-primary/20 text-primary uppercase">React</span>
+<span class="text-[10px] font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400 uppercase">AI / ML</span>
+</div>
+<h3 class="text-xl font-bold">NeuroVisual Core</h3>
+<p class="text-slate-400 text-sm line-clamp-2">A real-time AI image generation dashboard using custom Stable Diffusion checkpoints.</p>
+<button class="w-full py-3 rounded-lg border border-primary/30 hover:bg-primary text-sm font-bold transition-colors">View Details</button>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="glass rounded-2xl overflow-hidden group card-hover transition-all duration-300">
+<div class="h-48 bg-slate-800 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Cyberpunk style dark interface dashboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFPnz9y2SvmE-us5gCO39rmydbkeTYqYOLMC6K57ayRGH-7_HCzuM78dezd8aDZyz-R1fyVu8WieCLhlzINGS_rjN9zjxaATa6mv0m9doO4Y_DBz3sYadAa8dBoaQqeYrky_1t5EceHd2NnenLZq3cYQhGZKjYXKVTT-K3ygqdxQzBbcFla5USU05dp9sEHQVRmhftdOVIoskh3fYshsbE20Hac_U2KzbD_aa78_O0YfdvUZLLhOWGk6o5wscjFB1cl3X_1fOPWtV4"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">visibility</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex gap-2">
+<span class="text-[10px] font-bold px-2 py-1 rounded bg-primary/20 text-primary uppercase">Node.js</span>
+<span class="text-[10px] font-bold px-2 py-1 rounded bg-green-500/20 text-green-400 uppercase">Real-time</span>
+</div>
+<h3 class="text-xl font-bold">EtherFlow Ops</h3>
+<p class="text-slate-400 text-sm line-clamp-2">Blockchain transaction monitoring tool with low-latency WebSocket integration.</p>
+<button class="w-full py-3 rounded-lg border border-primary/30 hover:bg-primary text-sm font-bold transition-colors">View Details</button>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="glass rounded-2xl overflow-hidden group card-hover transition-all duration-300">
+<div class="h-48 bg-slate-800 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="High tech server room glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQmc1y0iFhkh1FONBvdKQIWTW-Q6CimEWdNsZEHzoQVxvxTvawjbSBhzn_Ydr4CjlkT2seaRaaegF4GsyXGLC-2AObeJ2aDC8O2_tCQxVKsO719IriMSU3y1ePPSDElyCClFBjrCve81_Cepnkx0QNMDybyza2zDWdhlygr5QLDPrxAk1Lh6r_RNKhOBFvjkbLai_dJhLoOgPw55IcAjvHgUzi1y4wQVpuX3rKizn83SbtQf8IbCY4DsHHwYmA0iGYCNuXraMaU6dR"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">visibility</span>
+</div>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex gap-2">
+<span class="text-[10px] font-bold px-2 py-1 rounded bg-primary/20 text-primary uppercase">Python</span>
+<span class="text-[10px] font-bold px-2 py-1 rounded bg-orange-500/20 text-orange-400 uppercase">Security</span>
+</div>
+<h3 class="text-xl font-bold">Sentinel AI</h3>
+<p class="text-slate-400 text-sm line-clamp-2">Automated vulnerability scanner powered by localized LLM training sets.</p>
+<button class="w-full py-3 rounded-lg border border-primary/30 hover:bg-primary text-sm font-bold transition-colors">View Details</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-24 px-6 max-w-7xl mx-auto" id="skills">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Technical -->
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<h3 class="text-xl font-bold">Technical</h3>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between mb-1 text-sm font-medium">
+<span>React / Next.js</span>
+<span>95%</span>
+</div>
+<div class="w-full bg-slate-800 rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1 text-sm font-medium">
+<span>Python (AI/ML)</span>
+<span>88%</span>
+</div>
+<div class="w-full bg-slate-800 rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1 text-sm font-medium">
+<span>Node.js / Go</span>
+<span>82%</span>
+</div>
+<div class="w-full bg-slate-800 rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 82%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tools -->
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">handyman</span>
+<h3 class="text-xl font-bold">Tools</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 glass rounded-lg text-sm font-medium border border-white/5 hover:border-primary/40 transition-colors">VS Code</span>
+<span class="px-4 py-2 glass rounded-lg text-sm font-medium border border-white/5 hover:border-primary/40 transition-colors">Figma</span>
+<span class="px-4 py-2 glass rounded-lg text-sm font-medium border border-white/5 hover:border-primary/40 transition-colors">Docker</span>
+<span class="px-4 py-2 glass rounded-lg text-sm font-medium border border-white/5 hover:border-primary/40 transition-colors">PyTorch</span>
+<span class="px-4 py-2 glass rounded-lg text-sm font-medium border border-white/5 hover:border-primary/40 transition-colors">Git/GitHub</span>
+<span class="px-4 py-2 glass rounded-lg text-sm font-medium border border-white/5 hover:border-primary/40 transition-colors">Kubernetes</span>
+</div>
+</div>
+<!-- Soft Skills -->
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">groups</span>
+<h3 class="text-xl font-bold">Soft Skills</h3>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+                                Agile Project Leadership
+                            </li>
+<li class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+                                Strategic Problem Solving
+                            </li>
+<li class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+                                Cross-functional Collaboration
+                            </li>
+<li class="flex items-center gap-2 text-slate-400">
+<span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+                                Technical Mentorship
+                            </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 px-6 bg-slate-100/30 dark:bg-white/[0.02]" id="contact">
+<div class="max-w-4xl mx-auto glass p-8 md:p-12 rounded-3xl border border-white/10">
+<div class="text-center mb-12">
+<h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
+<p class="text-slate-400">Interested in collaborating or just want to say hi?</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-sm font-medium ml-1">Name</label>
+<input class="w-full bg-background-dark border border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium ml-1">Email</label>
+<input class="w-full bg-background-dark border border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium ml-1">Message</label>
+<textarea class="w-full bg-background-dark border border-white/10 rounded-xl px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Your project idea or inquiry..." rows="5"></textarea>
+</div>
+<button class="w-full py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 neon-red-hover" type="submit">
+                            Send Message
+                            <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+<div class="mt-12 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">link</span>
+                                LinkedIn
+                            </a>
+<a class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">terminal</span>
+                                GitHub
+                            </a>
+<a class="text-slate-400 hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">mail</span>
+                                Email
+                            </a>
+</div>
+<p class="text-xs text-slate-500">© 2024 Alex Rivera. All rights reserved.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Subtle Footer Pattern -->
+<footer class="py-8 text-center text-slate-600 text-sm">
+<p>Designed and Built with <span class="text-primary">❤</span> by Alex</p>
+</footer>
+</div>
+</body></html>
