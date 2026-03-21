@@ -1,5 +1,9 @@
+import { useState } from 'react';
+
 const Projects = () => {
-  const projects = [
+  const [showAll, setShowAll] = useState(false);
+
+  const allProjects = [
     {
       title: 'Global E-commerce Rollout',
       description: 'Led cross-functional teams to launch a multi-region platform.',
@@ -27,7 +31,41 @@ const Projects = () => {
       stats: '5k+ App Store downloads',
       status: 'Public',
     },
+    {
+      title: 'Digital Transformation Initiative',
+      description: 'Orchestrated company-wide digital transformation across 5 departments.',
+      tags: ['Change Management', 'Digital Strategy'],
+      image:
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuDWDG2A0bpz1k7P-KsLbcdiB-pUg2wbK5iuHdjBRCcR-jafOfaH-4SVOk0k1N66GyfFH70xJraHO4mmxy7mx78TOgK7C-HqpsRfiKJvqVRzLWMUOJan_ubwcWdAT6TG-PO-IxgP0Et3Tn_dPFTBfmNFFyJN8Ed1Bcuu5zX6hXsQSRukcPQecP59iGwRVSOwjogBQn6G7JSvK1zhQ3il6OhBq_1ncffjZreiR6ksZSiOqXmEdp2CLSmImJyuvpm97MLRmnTXvmVoOD0g',
+      stats: '85% efficiency increase',
+      status: 'Completed',
+    },
+    {
+      title: 'AI-Powered Analytics Platform',
+      description: 'Built predictive analytics solution for supply chain optimization.',
+      tags: ['Data Science', 'Machine Learning'],
+      image:
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuDsfbmIK08mzNkphU25ubTLAhSZqe0G3wIphdd17QkIodM6VAKVPYvf_ceWCNOHmF8oPoSpuaK74X8rBa4hzAOedjHhIn_VtJ39A7hmCJeyErqi2DIChEFyoOWBJqlWVmnILTTFpasVrHvx_NSb7TddyCAjasVwPInh7e62KOVdogWqcwIpYV4yrNBcNdF7Ff7p2kd7XTCbxH9fmCU6pMfKMkw8TASFZfL1isLXFuc0iAWZsrg8ZYB8Tq5QudV7SozCVS5W3XckrY0b',
+      stats: '40% cost reduction',
+      status: 'In Progress',
+    },
+    {
+      title: 'Remote Team Productivity Suite',
+      description: 'Designed and implemented tools for distributed workforce management.',
+      tags: ['Remote Work', 'Productivity'],
+      image:
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuD8rWk7Bv2pLURorRoamfdbrwRk1-rJhj4n8yPDRkxi0ozW3CCzdH6TZGN_Xx2DxNspdpEc_pqPTdCFZjHv7ZfBfdR1TnXMmNTHHiMr3zE-FVF-Nb7m97GWEyyIJq3u6y5hPTlLjT6hspLgDxJN0_lkAIleiRaceCSQjHwaua6rBrPvhAqRFQuyWZ0G573mvJjkpwZOoXysCa8GZJF9f7AEE5RXBGLOZ5gDTjOXw5dcynXKGh9GMjzgiX80ZyBIiHxrsRx0ZA1mNtrf',
+      stats: '300% team engagement',
+      status: 'Live Now',
+    }
   ];
+
+  // Show featured projects (first 3) or all projects based on state
+  const displayedProjects = showAll ? allProjects : allProjects.slice(0, 3);
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
 
   return (
     <section className="px-6 py-20 space-y-12" id="projects">
@@ -40,19 +78,30 @@ const Projects = () => {
             A selection of my recent leadership and strategic endeavors.
           </p>
         </div>
-        <a
-          className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all"
-          href="#"
+        <button
+          className="text-primary font-semibold flex items-center gap-2 hover:gap-3 transition-all duration-300 group"
+          onClick={toggleShowAll}
         >
-          View All <span className="material-symbols-outlined">arrow_forward</span>
-        </a>
+          {showAll ? 'Show Less' : 'View All'}
+          <span className={`material-symbols-outlined transition-transform duration-300 ${
+            showAll ? 'rotate-90' : ''
+          } group-hover:scale-110`}>
+            {showAll ? 'keyboard_arrow_up' : 'arrow_forward'}
+          </span>
+        </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
+      <div
+        className={`grid gap-8 transition-all duration-500 ease-in-out ${
+          showAll ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-3'
+        }`}
+      >
+        {displayedProjects.map((project, index) => (
           <div
             key={index}
-            className="group card-hover flex flex-col bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300"
+            className={`group card-hover flex flex-col bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-500 ${
+              index >= 3 && showAll ? 'animate-fadeInUp' : ''
+            }`}
           >
             <div
               className="h-48 bg-cover bg-center overflow-hidden"
@@ -88,6 +137,14 @@ const Projects = () => {
           </div>
         ))}
       </div>
+
+      {showAll && (
+        <div className="text-center pt-8">
+          <p className="text-slate-400 text-sm">
+            Showing all {allProjects.length} projects
+          </p>
+        </div>
+      )}
     </section>
   );
 };

@@ -18,6 +18,19 @@
     @apply selection:bg-primary selection:text-white;
   }
 
+  /* Light theme overrides */
+  .light body {
+    @apply bg-white text-slate-900;
+  }
+
+  .light .grain {
+    opacity: 0.01;
+  }
+
+  .light .vignette {
+    background: radial-gradient(circle, transparent 60%, rgba(0, 0, 0, 0.1) 100%);
+  }
+
   /* Scroll offset for fixed header */
   section {
     scroll-margin-top: 100px;
@@ -83,5 +96,21 @@
 
   .nav-link:focus {
     outline: none;
+  }
+
+  /* Animation for "View All" projects */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out forwards;
   }
 }
