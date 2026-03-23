@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useState, useEffect } from "react";
+import { useTheme } from "../context/ThemeContext";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,28 +14,30 @@ const Header = () => {
     };
 
     const handleEscape = (event) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         setIsMobileMenuOpen(false);
       }
     };
 
     const handleClickOutside = (event) => {
-      if (isMobileMenuOpen &&
-          !event.target.closest('header') &&
-          !event.target.closest('[data-mobile-menu]') &&
-          !event.target.closest('button[aria-label="Toggle mobile menu"]')) {
+      if (
+        isMobileMenuOpen &&
+        !event.target.closest("header") &&
+        !event.target.closest("[data-mobile-menu]") &&
+        !event.target.closest('button[aria-label="Toggle mobile menu"]')
+      ) {
         setIsMobileMenuOpen(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    document.addEventListener('keydown', handleEscape);
-    document.addEventListener('click', handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+    document.addEventListener("keydown", handleEscape);
+    document.addEventListener("click", handleClickOutside);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('keydown', handleEscape);
-      document.removeEventListener('click', handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [isMobileMenuOpen]);
 
@@ -43,34 +46,34 @@ const Header = () => {
     if (isMobileMenuOpen) {
       // Store current scroll position without moving the page
       const currentScrollY = window.scrollY;
-      document.body.style.position = 'fixed';
+      document.body.style.position = "fixed";
       document.body.style.top = `-${currentScrollY}px`;
-      document.body.style.left = '0';
-      document.body.style.right = '0';
-      document.body.style.width = '100%';
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
     } else {
       // Restore scroll position when just closing menu (not when navigating)
       const scrollY = document.body.style.top;
 
       // Only restore if we have a scroll position and the menu was actually open
       if (scrollY) {
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.left = '';
-        document.body.style.right = '';
-        document.body.style.width = '';
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.width = "";
 
-        const numericScrollY = parseInt(scrollY || '0') * -1;
+        const numericScrollY = parseInt(scrollY || "0") * -1;
         window.scrollTo(0, numericScrollY);
       }
     }
 
     return () => {
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
-      document.body.style.width = '';
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
     };
   }, [isMobileMenuOpen]);
 
@@ -84,16 +87,16 @@ const Header = () => {
     // Let menu close animation finish, then scroll
     setTimeout(() => {
       // Clear any body positioning that might interfere
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
-      document.body.style.width = '';
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
 
       // Direct scroll to target
       targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+        behavior: "smooth",
+        block: "start",
       });
     }, 50);
   };
@@ -104,7 +107,7 @@ const Header = () => {
     e.stopPropagation();
 
     // Pure toggle - no scrolling, no navigation
-    setIsMobileMenuOpen(prev => !prev);
+    setIsMobileMenuOpen((prev) => !prev);
   };
 
   return (
@@ -112,62 +115,62 @@ const Header = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform-none will-change-transform ${
           isScrolled
-            ? 'bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-black/5 dark:border-primary/30 shadow-lg shadow-black/5 dark:shadow-primary/10'
-            : 'bg-transparent border-b border-black/5 dark:border-white/10'
+            ? "bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-black/5 dark:border-primary/30 shadow-lg shadow-black/5 dark:shadow-primary/10"
+            : "bg-transparent border-b border-black/5 dark:border-white/10"
         }`}
         style={{
-          WebkitTransform: 'translate3d(0,0,0)',
-          transform: 'translate3d(0,0,0)'
+          WebkitTransform: "translate3d(0,0,0)",
+          transform: "translate3d(0,0,0)",
         }}
       >
         <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
           <div
-            className="flex items-center gap-2 select-none md:cursor-pointer hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 transition-opacity select-none md:cursor-pointer hover:opacity-80"
             onClick={(e) => {
               // Only work on desktop
               if (window.innerWidth >= 768) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window.scrollTo({ top: 0, behavior: "smooth" });
               }
             }}
           >
-            <div className="relative w-fit h-10 flex items-center justify-center">
-              {/* Logo1 Image from src/assets folder */}
+            <div className="relative flex items-center justify-center h-10 w-fit">
+              {/* Logo Image from src/assets folder */}
               <img
-                src="/src/assets/logo1.png"
+                src={logo}
                 alt="NH Logo"
-                className="h-10 w-auto object-contain"
+                className="object-contain w-auto h-10"
               />
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-10">
+          <nav className="items-center hidden gap-10 md:flex">
             <button
-              className="nav-link text-sm font-medium transition-colors text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="text-sm font-medium transition-colors nav-link text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               Home
             </button>
             <button
-              className="nav-link text-sm font-medium transition-colors text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
-              onClick={() => scrollToSection('about-me')}
+              className="text-sm font-medium transition-colors nav-link text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
+              onClick={() => scrollToSection("about-me")}
             >
               About
             </button>
             <button
-              className="nav-link text-sm font-medium transition-colors text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
-              onClick={() => scrollToSection('projects')}
+              className="text-sm font-medium transition-colors nav-link text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
+              onClick={() => scrollToSection("projects")}
             >
               Projects
             </button>
             <button
-              className="nav-link text-sm font-medium transition-colors text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
-              onClick={() => scrollToSection('skills')}
+              className="text-sm font-medium transition-colors nav-link text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
+              onClick={() => scrollToSection("skills")}
             >
               Skills
             </button>
             <button
-              className="nav-link text-sm font-medium transition-colors text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
-              onClick={() => scrollToSection('contact')}
+              className="text-sm font-medium transition-colors nav-link text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
+              onClick={() => scrollToSection("contact")}
             >
               Contact
             </button>
@@ -175,22 +178,22 @@ const Header = () => {
 
           <div className="flex items-center gap-4">
             <button
-              className="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 group"
+              className="p-2 transition-all duration-300 rounded-full hover:bg-black/5 dark:hover:bg-white/5 group"
               onClick={toggleTheme}
               aria-label="Toggle theme"
             >
-              <span className="material-symbols-outlined text-xl text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-300">
-                {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+              <span className="text-xl transition-colors duration-300 material-symbols-outlined text-slate-900 dark:text-white group-hover:text-primary">
+                {theme === "dark" ? "light_mode" : "dark_mode"}
               </span>
             </button>
             <button
-              className="md:hidden p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300"
+              className="p-2 transition-all duration-300 rounded-full md:hidden hover:bg-black/5 dark:hover:bg-white/5"
               onClick={handleMobileMenuClick}
               type="button"
               aria-label="Toggle mobile menu"
             >
               <span className="material-symbols-outlined text-slate-900 dark:text-white">
-                {isMobileMenuOpen ? 'close' : 'menu'}
+                {isMobileMenuOpen ? "close" : "menu"}
               </span>
             </button>
           </div>
@@ -202,14 +205,14 @@ const Header = () => {
         data-mobile-menu
         className={`md:hidden fixed top-16 left-0 right-0 z-40 transition-all duration-300 ease-in-out ${
           isMobileMenuOpen
-            ? 'transform translate-y-0 opacity-100'
-            : 'transform -translate-y-full opacity-0 pointer-events-none'
+            ? "transform translate-y-0 opacity-100"
+            : "transform -translate-y-full opacity-0 pointer-events-none"
         }`}
       >
-        <div className="bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-black/5 dark:border-primary/30 shadow-lg">
+        <div className="border-b shadow-lg bg-white/95 dark:bg-black/95 backdrop-blur-md border-black/5 dark:border-primary/30">
           <nav className="px-6 py-4 space-y-4">
             <button
-              className="block w-full text-left py-3 px-4 rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary transition-colors"
+              className="block w-full px-4 py-3 text-left transition-colors rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary"
               onClick={() => {
                 // Simply close menu and navigate to home
                 setIsMobileMenuOpen(false);
@@ -217,40 +220,40 @@ const Header = () => {
                 // Let menu close animation finish, then scroll
                 setTimeout(() => {
                   // Clear any body positioning that might interfere
-                  document.body.style.position = '';
-                  document.body.style.top = '';
-                  document.body.style.left = '';
-                  document.body.style.right = '';
-                  document.body.style.width = '';
+                  document.body.style.position = "";
+                  document.body.style.top = "";
+                  document.body.style.left = "";
+                  document.body.style.right = "";
+                  document.body.style.width = "";
 
                   // Direct scroll to top
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }, 50);
               }}
             >
               Home
             </button>
             <button
-              className="block w-full text-left py-3 px-4 rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary transition-colors"
-              onClick={() => scrollToSection('about-me')}
+              className="block w-full px-4 py-3 text-left transition-colors rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary"
+              onClick={() => scrollToSection("about-me")}
             >
               About
             </button>
             <button
-              className="block w-full text-left py-3 px-4 rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary transition-colors"
-              onClick={() => scrollToSection('projects')}
+              className="block w-full px-4 py-3 text-left transition-colors rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary"
+              onClick={() => scrollToSection("projects")}
             >
               Projects
             </button>
             <button
-              className="block w-full text-left py-3 px-4 rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary transition-colors"
-              onClick={() => scrollToSection('skills')}
+              className="block w-full px-4 py-3 text-left transition-colors rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary"
+              onClick={() => scrollToSection("skills")}
             >
               Skills
             </button>
             <button
-              className="block w-full text-left py-3 px-4 rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary transition-colors"
-              onClick={() => scrollToSection('contact')}
+              className="block w-full px-4 py-3 text-left transition-colors rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary"
+              onClick={() => scrollToSection("contact")}
             >
               Contact
             </button>
@@ -262,11 +265,13 @@ const Header = () => {
       <div className="h-20"></div>
 
       {/* Animated border line */}
-      <div className={`fixed top-16 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? 'w-full h-[1px] bg-primary/60 shadow-[0_0_12px_rgba(209,0,28,0.6)]'
-          : 'w-full h-[1px] bg-primary/20 shadow-[0_0_8px_rgba(209,0,28,0.1)]'
-      }`}></div>
+      <div
+        className={`fixed top-16 left-0 right-0 z-40 transition-all duration-300 ${
+          isScrolled
+            ? "w-full h-[1px] bg-primary/60 shadow-[0_0_12px_rgba(209,0,28,0.6)]"
+            : "w-full h-[1px] bg-primary/20 shadow-[0_0_8px_rgba(209,0,28,0.1)]"
+        }`}
+      ></div>
     </>
   );
 };
