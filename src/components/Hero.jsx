@@ -10,7 +10,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="px-6 pt-24 pb-12 min-h-[calc(100vh-1rem)] flex items-center justify-center">
+    <section className="px-6 pt-8 pb-12 min-h-[calc(100vh-1rem)] flex items-center justify-center">
       <div className="max-w-[1200px] mx-auto w-full">
         {/* Premium Modern Container */}
         <div className="bg-white/80 dark:bg-black/40 backdrop-blur-xl rounded-3xl border border-black/10 dark:border-white/10 shadow-2xl shadow-black/5 dark:shadow-black/20 p-6 md:p-8 lg:p-12">
