@@ -75,7 +75,7 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-slate-600 dark:text-slate-400">
-            A selection of my recent leadership and strategic endeavors.
+            A selection of my recent software and application development projects.
           </p>
         </div>
         <button
