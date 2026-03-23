@@ -16,11 +16,11 @@ const Hero = () => {
           <p className="text-primary font-semibold tracking-widest uppercase text-lg">
             Hey, I'm
           </p>
-          <h1 className="text-6xl md:text-8xl font-black text-black dark:text-white glow-red leading-tight">
+          <h1 className="text-5xl md:text-7xl font-black text-black dark:text-white glow-red leading-tight">
             NETHMA HARINI
           </h1>
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-light max-w-xl mx-auto md:mx-0">
-            Aspiring Project Manager | Strategic Planner | Team Coordinator
+          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light max-w-3xl mx-auto md:mx-0 leading-relaxed">
+            <span className="whitespace-nowrap">Aspiring Project Manager</span> | <span className="whitespace-nowrap">Strategic Planner</span> | <span className="whitespace-nowrap">IT Undergraduate</span>
           </p>
         </div>
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">

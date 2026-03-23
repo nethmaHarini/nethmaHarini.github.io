@@ -4,7 +4,6 @@ import { useTheme } from '../context/ThemeContext';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isNavigating, setIsNavigating] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -20,7 +19,10 @@ const Header = () => {
     };
 
     const handleClickOutside = (event) => {
-      if (isMobileMenuOpen && !event.target.closest('header') && !event.target.closest('[data-mobile-menu]')) {
+      if (isMobileMenuOpen &&
+          !event.target.closest('header') &&
+          !event.target.closest('[data-mobile-menu]') &&
+          !event.target.closest('button[aria-label="Toggle mobile menu"]')) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -39,26 +41,28 @@ const Header = () => {
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      // Better approach for mobile - use position fixed on body instead of overflow hidden
+      // Store current scroll position without moving the page
+      const currentScrollY = window.scrollY;
       document.body.style.position = 'fixed';
-      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.top = `-${currentScrollY}px`;
       document.body.style.left = '0';
       document.body.style.right = '0';
+      document.body.style.width = '100%';
     } else {
-      // Restore scroll position when closing menu (only if not navigating to a section)
+      // Restore scroll position when just closing menu (not when navigating)
       const scrollY = document.body.style.top;
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
 
-      // Only restore scroll position if we're not navigating to a section
-      if (scrollY && !isNavigating) {
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      // Only restore if we have a scroll position and the menu was actually open
+      if (scrollY) {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.width = '';
+
+        const numericScrollY = parseInt(scrollY || '0') * -1;
+        window.scrollTo(0, numericScrollY);
       }
-
-      // Reset navigation flag
-      setIsNavigating(false);
     }
 
     return () => {
@@ -66,30 +70,41 @@ const Header = () => {
       document.body.style.top = '';
       document.body.style.left = '';
       document.body.style.right = '';
+      document.body.style.width = '';
     };
-  }, [isMobileMenuOpen, isNavigating]);
+  }, [isMobileMenuOpen]);
 
   const scrollToSection = (sectionId) => {
     const targetElement = document.getElementById(sectionId);
     if (!targetElement) return;
 
-    // Set navigation flag to prevent scroll restoration
-    setIsNavigating(true);
-
-    // Close mobile menu
+    // Simply close menu and navigate - no complex position handling
     setIsMobileMenuOpen(false);
 
-    // Small delay to ensure menu closes, then scroll to target
+    // Let menu close animation finish, then scroll
     setTimeout(() => {
+      // Clear any body positioning that might interfere
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+
+      // Direct scroll to target
       targetElement.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
-    }, 100);
+    }, 50);
   };
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const handleMobileMenuClick = (e) => {
+    // Prevent any default behavior or propagation
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Pure toggle - no scrolling, no navigation
+    setIsMobileMenuOpen(prev => !prev);
   };
 
   return (
@@ -107,16 +122,12 @@ const Header = () => {
       >
         <div className="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
           <div
-            className="flex items-center gap-2 md:cursor-pointer hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 select-none md:cursor-pointer hover:opacity-80 transition-opacity"
             onClick={(e) => {
-              // Completely disable logo click on mobile
-              if (window.innerWidth < 768) {
-                e.preventDefault();
-                e.stopPropagation();
-                return;
+              // Only work on desktop
+              if (window.innerWidth >= 768) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }
-              // Only scroll to home on desktop
-              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
             <div className="w-fit h-8 px-2 bg-primary rounded-sm flex items-center justify-center font-black text-white italic">
@@ -172,11 +183,8 @@ const Header = () => {
             </button>
             <button
               className="md:hidden p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleMobileMenu();
-              }}
+              onClick={handleMobileMenuClick}
+              type="button"
               aria-label="Toggle mobile menu"
             >
               <span className="material-symbols-outlined text-slate-900 dark:text-white">
@@ -201,16 +209,21 @@ const Header = () => {
             <button
               className="block w-full text-left py-3 px-4 rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary transition-colors"
               onClick={() => {
-                // Set navigation flag to prevent scroll restoration
-                setIsNavigating(true);
-
-                // Close mobile menu
+                // Simply close menu and navigate to home
                 setIsMobileMenuOpen(false);
 
-                // Small delay to ensure menu closes, then scroll to top
+                // Let menu close animation finish, then scroll
                 setTimeout(() => {
+                  // Clear any body positioning that might interfere
+                  document.body.style.position = '';
+                  document.body.style.top = '';
+                  document.body.style.left = '';
+                  document.body.style.right = '';
+                  document.body.style.width = '';
+
+                  // Direct scroll to top
                   window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 100);
+                }, 50);
               }}
             >
               Home
