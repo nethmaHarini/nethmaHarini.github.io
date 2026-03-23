@@ -44,36 +44,13 @@ const Header = () => {
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      // Store current scroll position without moving the page
-      const currentScrollY = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${currentScrollY}px`;
-      document.body.style.left = "0";
-      document.body.style.right = "0";
-      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
     } else {
-      // Restore scroll position when just closing menu (not when navigating)
-      const scrollY = document.body.style.top;
-
-      // Only restore if we have a scroll position and the menu was actually open
-      if (scrollY) {
-        document.body.style.position = "";
-        document.body.style.top = "";
-        document.body.style.left = "";
-        document.body.style.right = "";
-        document.body.style.width = "";
-
-        const numericScrollY = parseInt(scrollY || "0") * -1;
-        window.scrollTo(0, numericScrollY);
-      }
+      document.body.style.overflow = "";
     }
 
     return () => {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.width = "";
+      document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
 
@@ -81,24 +58,14 @@ const Header = () => {
     const targetElement = document.getElementById(sectionId);
     if (!targetElement) return;
 
-    // Simply close menu and navigate - no complex position handling
+    // Close the menu first
     setIsMobileMenuOpen(false);
 
-    // Let menu close animation finish, then scroll
-    setTimeout(() => {
-      // Clear any body positioning that might interfere
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      document.body.style.width = "";
-
-      // Direct scroll to target
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 50);
+    // Scroll to target immediately
+    targetElement.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   const handleMobileMenuClick = (e) => {
@@ -214,21 +181,9 @@ const Header = () => {
             <button
               className="block w-full px-4 py-3 text-left transition-colors rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary"
               onClick={() => {
-                // Simply close menu and navigate to home
+                // Close menu and scroll to top
                 setIsMobileMenuOpen(false);
-
-                // Let menu close animation finish, then scroll
-                setTimeout(() => {
-                  // Clear any body positioning that might interfere
-                  document.body.style.position = "";
-                  document.body.style.top = "";
-                  document.body.style.left = "";
-                  document.body.style.right = "";
-                  document.body.style.width = "";
-
-                  // Direct scroll to top
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }, 50);
+                window.scrollTo({ top: 0, behavior: "smooth" });
               }}
             >
               Home
