@@ -101,12 +101,15 @@ const Header = () => {
               }
             }}
           >
-            <div className="relative flex items-center justify-center h-10 w-fit">
+            <div className="relative flex items-center justify-center h-10 w-fit bg-transparent">
               {/* Logo Image from src/assets folder */}
               <img
                 src={theme === "dark" ? logo : logoWhite}
                 alt="NH Logo"
-                className="object-contain w-10 h-10"
+                className="object-contain w-10 h-10 bg-transparent"
+                style={{
+                  backgroundColor: "transparent"
+                }}
               />
             </div>
           </div>
