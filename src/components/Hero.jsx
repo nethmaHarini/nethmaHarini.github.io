@@ -54,7 +54,7 @@ const Hero = () => {
                       className="w-full h-full bg-slate-100 dark:bg-slate-800 bg-cover bg-center"
                       style={{
                         backgroundImage:
-                          'url("https://lh3.googleusercontent.com/aida/ADBb0ugePmYfjz_Jwmtt32up8LjCHFJPqSxRxxQgp8yQTzFEpNK7oGpcyDwT4kwis53-rjIxWr2zRh6p2Xx2ZUQkxDh95ia9_AaK4M-Pxb5Y2xT5eJCX3UdNSwZkbxQb-y5o6-O_Zp7vs4nFYaImiFWxYytFKWWvL8FwmER0hOtu2_t-8zfIwqOasznQvB54h5m6mYse5h7erIQNydIiS_MeRKl3yu5B7ozddyUmVeulsuUzxRfTi0qPyiW69NAydP8Df3yLNSGfj21ONP0")',
+                          'url("/src/assets/profile pic.jpeg")',
                       }}
                     ></div>
                   </div>
