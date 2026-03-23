@@ -130,12 +130,14 @@ const Header = () => {
               }
             }}
           >
-            <div className="w-fit h-8 px-2 bg-primary rounded-sm flex items-center justify-center font-black text-white italic">
-              NETHMA
+            <div className="relative w-fit h-10 flex items-center justify-center">
+              {/* Logo1 Image from UIs folder */}
+              <img
+                src="/UIs/logo1.png"
+                alt="NH Logo"
+                className="h-10 w-auto object-contain"
+              />
             </div>
-            <span className="text-xl font-bold tracking-tighter uppercase text-black dark:text-white">
-              HARINI
-            </span>
           </div>
 
           <nav className="hidden md:flex items-center gap-10">
