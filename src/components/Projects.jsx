@@ -71,10 +71,10 @@ const Projects = () => {
     <section className="px-6 py-20 space-y-12" id="projects">
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div className="space-y-2">
-          <h2 className="text-4xl font-bold text-white tracking-tight">
+          <h2 className="text-4xl font-bold text-black dark:text-white tracking-tight">
             Featured Projects
           </h2>
-          <p className="text-slate-400">
+          <p className="text-slate-600 dark:text-slate-400">
             A selection of my recent leadership and strategic endeavors.
           </p>
         </div>
@@ -99,7 +99,7 @@ const Projects = () => {
         {displayedProjects.map((project, index) => (
           <div
             key={index}
-            className={`group card-hover flex flex-col bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-500 ${
+            className={`group card-hover flex flex-col bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 rounded-xl overflow-hidden transition-all duration-500 shadow-sm ${
               index >= 3 && showAll ? 'animate-fadeInUp' : ''
             }`}
           >
@@ -109,27 +109,27 @@ const Projects = () => {
                 backgroundImage: `url("${project.image}")`,
               }}
             >
-              <div className="w-full h-full bg-black/40 group-hover:bg-transparent transition-all"></div>
+              <div className="w-full h-full bg-primary/5 dark:bg-black/40 group-hover:bg-transparent transition-all"></div>
             </div>
 
             <div className="p-6 space-y-4">
               <div>
-                <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                <p className="text-sm text-slate-400">{project.description}</p>
+                <h3 className="text-xl font-bold text-black dark:text-white">{project.title}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">{project.description}</p>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/10 border border-primary/30 rounded-full text-primary"
+                    className="px-3 py-1 text-[10px] font-bold uppercase tracking-wider bg-primary/5 border border-primary/20 rounded-full text-primary"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex justify-between items-center text-xs text-slate-500 font-medium">
+              <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex justify-between items-center text-xs text-slate-500 font-medium">
                 <span>{project.stats}</span>
                 <span className="text-primary">{project.status}</span>
               </div>
@@ -140,7 +140,7 @@ const Projects = () => {
 
       {showAll && (
         <div className="text-center pt-8">
-          <p className="text-slate-400 text-sm">
+          <p className="text-slate-600 dark:text-slate-400 text-sm">
             Showing all {allProjects.length} projects
           </p>
         </div>

@@ -33,23 +33,23 @@ const Contact = () => {
     <section className="px-6 py-20" id="contact">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-16">
         <div className="flex-1 space-y-8">
-          <h2 className="text-5xl font-black text-white glow-red">
+          <h2 className="text-5xl font-black text-black dark:text-white glow-red">
             Let's Lead Something Great Together
           </h2>
-          <p className="text-slate-400 leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
             I'm open to discussing project opportunities, collaboration, and
             strategic initiatives.
           </p>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-4 text-slate-300">
+            <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                 <span className="material-symbols-outlined">mail</span>
               </div>
               <span>nethmaharini03@gmail.com</span>
             </div>
 
-            <div className="flex items-center gap-4 text-slate-300">
+            <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                 <span className="material-symbols-outlined">location_on</span>
               </div>
@@ -61,7 +61,7 @@ const Contact = () => {
         <div className="flex-1">
           <form
             ref={form}
-            className="space-y-6 bg-white/5 p-8 rounded-2xl border border-white/10 backdrop-blur-md"
+            className="space-y-6 bg-white/60 dark:bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-none"
             onSubmit={handleSubmit}
           >
             <div className="space-y-2">
@@ -70,7 +70,7 @@ const Contact = () => {
               </label>
               <input
                 name="from_name"
-                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-white"
+                className="w-full bg-white dark:bg-black/50 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-black dark:text-white"
                 placeholder="Enter your full name here"
                 type="text"
                 required
@@ -83,7 +83,7 @@ const Contact = () => {
               </label>
               <input
                 name="from_email"
-                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-white"
+                className="w-full bg-white dark:bg-black/50 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-black dark:text-white"
                 placeholder="Enter your email here"
                 type="email"
                 required
@@ -96,7 +96,7 @@ const Contact = () => {
               </label>
               <input
                 name="subject"
-                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-white"
+                className="w-full bg-white dark:bg-black/50 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-black dark:text-white"
                 placeholder="Project Collaboration"
                 type="text"
               />
@@ -108,7 +108,7 @@ const Contact = () => {
               </label>
               <textarea
                 name="message"
-                className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-white"
+                className="w-full bg-white dark:bg-black/50 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-black dark:text-white"
                 placeholder="Tell me about your project..."
                 rows="4"
                 required

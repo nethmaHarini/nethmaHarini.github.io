@@ -6,7 +6,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="px-6 py-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer className="px-6 py-12 border-t border-slate-100 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
       <p className="text-slate-500 text-sm md:text-left">
         © 2026 Nethma Harini. All rights reserved.
       </p>

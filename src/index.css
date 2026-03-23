@@ -18,9 +18,14 @@
     @apply selection:bg-primary selection:text-white;
   }
 
-  /* Light theme overrides */
   .light body {
-    @apply bg-white text-slate-900;
+    background: radial-gradient(circle at 10% 20%, rgba(209, 0, 28, 0.03) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(209, 0, 28, 0.03) 0%, transparent 40%),
+                linear-gradient(to bottom right, #ffffff, #fffcfc);
+  }
+
+  .dark body {
+    @apply bg-background-dark;
   }
 
   .light .grain {
@@ -34,6 +39,15 @@
   /* Scroll offset for fixed header */
   section {
     scroll-margin-top: 100px;
+  }
+
+  /* Ensure fixed positioning works properly on mobile devices */
+  .mobile-fixed {
+    position: fixed !important;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 }
 
@@ -112,5 +126,24 @@
 
   .animate-fadeInUp {
     animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  /* Light theme glow border for About and Skills sections */
+  .about-glow-border {
+    position: relative;
+  }
+
+  .light .about-glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    padding: 1px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #D1001C 0%, #FF4D4D 10%, transparent 40%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
   }
 }
