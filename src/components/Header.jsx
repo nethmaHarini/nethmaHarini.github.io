@@ -131,9 +131,9 @@ const Header = () => {
             }}
           >
             <div className="relative w-fit h-10 flex items-center justify-center">
-              {/* Logo1 Image from UIs folder */}
+              {/* Logo1 Image from src/assets folder */}
               <img
-                src="/UIs/logo1.png"
+                src="/src/assets/logo1.png"
                 alt="NH Logo"
                 className="h-10 w-auto object-contain"
               />
