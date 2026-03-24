@@ -24,23 +24,18 @@ const About = () => {
               {/* Paragraphs */}
               <div className="space-y-6 max-w-4xl">
                 <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-200">
-                  I focus on delivering projects through clear planning, structured execution, and consistent coordination.
+                  I enjoy shaping ideas into solutions that move projects forward.
                 </p>
 
                 <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-200">
-                  As an aspiring Project Manager, I am committed to organizing complex requirements into actionable plans,
-                  aligning team efforts, and ensuring steady progress from initiation to delivery. I emphasize clarity in
-                  communication, accountability in execution, and efficiency in every stage of the project lifecycle.
+                  As an aspiring Project Manager, I focus on planning tasks, coordinating teams, and keeping projects
+                  moving in the right direction. I am comfortable working within technical environments and understanding
+                  how systems and processes connect.
                 </p>
 
                 <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-200">
-                  Through my experience with system-based projects, I have developed the ability to manage workflows,
-                  adapt to changing requirements, and maintain focus on achieving defined objectives.
-                </p>
-
-                <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-200">
-                  My goal is to grow as a Project Manager who ensures projects are delivered on time, aligned with objectives,
-                  and capable of creating measurable value.
+                  I value clear communication, simple planning, and steady progress. My goal is to deliver work that is
+                  organized, efficient, and aligned with defined objectives.
                 </p>
               </div>
             </div>
