@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../context/ThemeContext";
+import logoDark from "../assets/logodark.png";
+import logoLight from "../assets/logowhite.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -102,7 +104,7 @@ const Header = () => {
             <div className="relative flex items-center justify-center h-12 w-fit">
               {/* Theme-responsive Logo */}
               <img
-                src={theme === 'dark' ? '/src/assets/logodark.png' : '/src/assets/logowhite.png'}
+                src={theme === "dark" ? logoDark : logoLight}
                 alt="NH Logo"
                 className="h-12 w-auto object-contain"
               />

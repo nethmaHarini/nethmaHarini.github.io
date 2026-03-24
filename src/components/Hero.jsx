@@ -1,3 +1,5 @@
+import profileImage from "../assets/me.png";
+
 const Hero = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -53,8 +55,7 @@ const Hero = () => {
                     <div
                       className="w-full h-full bg-slate-100 dark:bg-slate-800 bg-cover bg-center"
                       style={{
-                        backgroundImage:
-                          'url("/src/assets/me.png")',
+                        backgroundImage: `url(${profileImage})`,
                       }}
                     ></div>
                   </div>
