@@ -54,7 +54,7 @@ const Hero = () => {
                       className="w-full h-full bg-slate-100 dark:bg-slate-800 bg-cover bg-center"
                       style={{
                         backgroundImage:
-                          'url("/src/assets/profile pic.jpeg")',
+                          'url("/src/assets/me.png")',
                       }}
                     ></div>
                   </div>
