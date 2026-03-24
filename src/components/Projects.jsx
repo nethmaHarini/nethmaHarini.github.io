@@ -101,9 +101,14 @@ const Projects = () => {
         {displayedProjects.map((project, index) => (
           <div
             key={index}
-            className={`group card-hover flex flex-col bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 rounded-xl overflow-hidden transition-all duration-500 shadow-sm ${
+            className={`group card-hover flex flex-col bg-white/80 dark:bg-white/5 backdrop-blur-sm border border-slate-200 dark:border-white/10 rounded-xl overflow-hidden transition-all duration-500 shadow-sm cursor-pointer ${
               index >= 3 && showAll ? 'animate-fadeInUp' : ''
             }`}
+            onClick={() => {
+              if (project.link) {
+                window.open(project.link, '_blank');
+              }
+            }}
           >
             <div
               className="h-48 bg-cover bg-center overflow-hidden"

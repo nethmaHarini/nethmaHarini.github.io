@@ -33,10 +33,18 @@ const Contact = () => {
     <section className="px-6 py-20" id="contact">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-16">
         <div className="flex-1 space-y-8">
-          <h2 className="text-5xl font-black text-black dark:text-white glow-red">
-            Let's Lead Something Great Together
-          </h2>
-          <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-[2px] bg-primary"></div>
+              <p className="text-primary font-bold tracking-[0.2em] uppercase text-xs">
+                Driven by Execution
+              </p>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white tracking-tight leading-tight">
+              Open for Collaboration
+            </h2>
+          </div>
+          <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400">
             I'm open to discussing project opportunities, collaboration, and
             strategic initiatives.
           </p>
