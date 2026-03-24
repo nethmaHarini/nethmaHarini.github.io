@@ -5,22 +5,24 @@ const Projects = () => {
 
   const allProjects = [
     {
-      title: 'Global E-commerce Rollout',
-      description: 'Led cross-functional teams to launch a multi-region platform.',
-      tags: ['Project Planning', 'Agile'],
+      title: '🎵 AI Music Separation & Player App',
+      description: 'A professional React Native music player with advanced AI-powered source separation capabilities. Load any song and separate it into individual vocal and instrumental tracks with studio-quality results.',
+      tags: ['React Native', 'AI/ML', 'Audio Processing'],
       image:
         'https://lh3.googleusercontent.com/aida-public/AB6AXuBWDG2A0bpz1k7P-KsLbcdiB-pUg2wbK5iuHdjBRCcR-jafOfaH-4SVOk0k1N66GyfFH70xJraHO4mmxy7mx78TOgK7C-HqpsRfiKJvqVRzLWMUOJan_ubwcWdAT6TG-PO-IxgP0Et3Tn_dPFTBfmNFFyJN8Ed1Bcuu5zX6hXsQSRukcPQecP59iGwRVSOwjogBQn6G7JSvK1zhQ3il6OhBq_1ncffjZreiR6ksZSiOqXmEdp2CLSmImJyuvpm97MLRmnTXvmVoOD0g',
-      stats: '10k+ active users',
-      status: 'Live Now',
+      stats: 'GitHub Repository',
+      status: 'Live Demo',
+      link: 'https://github.com/nethmaHarini/MediaPlayer.git'
     },
     {
-      title: 'Business Intelligence Strategy',
-      description: 'Defined KPIs and strategic roadmap for enterprise analytics.',
-      tags: ['Stakeholder Communication', 'Strategy'],
+      title: '📚 Book Diary App',
+      description: 'BookDiary is a personal book tracking and recommendation diary built for Android. Track your reading progress, discover new books, and maintain a personal library with reviews and ratings.',
+      tags: ['Android', 'Java/Kotlin', 'SQLite'],
       image:
         'https://lh3.googleusercontent.com/aida-public/AB6AXuDsfbmIK08mzNkphU25ubTLAhSZqe0G3wIphdd17QkIodM6VAKVPYvf_ceWCNOHmF8oPoSpuaK74X8rBa4hzAOedjHhIn_VtJ39A7hmCJeyErqi2DIChEFyoOWBJqlWVmnILTTFpasVrHvx_NSb7TddyCAjasVwPInh7e62KOVdogWqcwIpYV4yrNBcNdF7Ff7p2kd7XTCbxH9fmCU6pMfKMkw8TASFZfL1isLXFuc0iAWZsrg8ZYB8Tq5QudV7SozCVS5W3XckrY0b',
-      stats: '99.9% uptime achieved',
-      status: 'Enterprise',
+      stats: 'Android App',
+      status: 'Published',
+      link: 'https://github.com/nethmaHarini/BookDiary.git'
     },
     {
       title: 'FinTech Product Launch',
@@ -75,7 +77,7 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-slate-600 dark:text-slate-400">
-            A selection of my recent leadership and strategic endeavors.
+            A selection of my recent software and application development projects.
           </p>
         </div>
         <button
