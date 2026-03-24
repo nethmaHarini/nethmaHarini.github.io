@@ -124,7 +124,6 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            </div>
           </div>
 
           <nav className="items-center hidden gap-10 md:flex">
