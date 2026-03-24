@@ -5,7 +5,7 @@ const Projects = () => {
 
   const allProjects = [
     {
-      title: '🎵 AI Music Separation & Player App',
+      title: ' AI Music Separation & Player App',
       description: 'A professional React Native music player with advanced AI-powered source separation capabilities. Load any song and separate it into individual vocal and instrumental tracks with studio-quality results.',
       tags: ['React Native', 'AI/ML', 'Audio Processing'],
       image:
@@ -15,7 +15,7 @@ const Projects = () => {
       link: 'https://github.com/nethmaHarini/MediaPlayer.git'
     },
     {
-      title: '📚 Book Diary App',
+      title: ' Book Diary App',
       description: 'BookDiary is a personal book tracking and recommendation diary built for Android. Track your reading progress, discover new books, and maintain a personal library with reviews and ratings.',
       tags: ['Android', 'Java/Kotlin', 'SQLite'],
       image:
