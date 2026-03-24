@@ -99,30 +99,13 @@ const Header = () => {
               }
             }}
           >
-            <div className="relative flex items-center justify-center h-10 w-fit">
-              {/* Custom NH Logo */}
-              <div className="flex items-center">
-                {/* N - Red */}
-                <div className="px-2 py-1">
-                  <span className="text-2xl font-black text-primary tracking-tight">N</span>
-                </div>
-                {/* H - Theme-responsive gradient */}
-                <div className="px-2 py-1">
-                  <span
-                    className="text-2xl font-black tracking-tight"
-                    style={{
-                      background: theme === 'dark'
-                        ? 'linear-gradient(45deg, #ffffff, #f1f5f9)'
-                        : 'linear-gradient(45deg, #000000, #334155)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text'
-                    }}
-                  >
-                    H
-                  </span>
-                </div>
-              </div>
+            <div className="relative flex items-center justify-center h-12 w-fit">
+              {/* Theme-responsive Logo */}
+              <img
+                src={theme === 'dark' ? '/src/assets/logodark.png' : '/src/assets/logowhite.png'}
+                alt="NH Logo"
+                className="h-12 w-auto object-contain"
+              />
             </div>
           </div>
 
