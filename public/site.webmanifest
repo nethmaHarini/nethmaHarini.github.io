@@ -1,0 +1,28 @@
+{
+  "name": "Nethma Harini | Portfolio",
+  "short_name": "Nethma Harini",
+  "description": "As an aspiring Project Manager, I focus on planning tasks, coordinating teams, and keeping projects moving in the right direction.",
+  "icons": [
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#CB0C14",
+  "background_color": "#140405",
+  "display": "standalone",
+  "start_url": "/"
+}
