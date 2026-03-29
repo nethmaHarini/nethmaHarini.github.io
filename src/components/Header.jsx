@@ -138,6 +138,12 @@ const Header = () => {
             </button>
             <button
               className="text-sm font-medium transition-colors nav-link text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
+              onClick={() => scrollToSection("faq")}
+            >
+              FAQ
+            </button>
+            <button
+              className="text-sm font-medium transition-colors nav-link text-slate-800 dark:text-white hover:text-primary dark:hover:text-primary"
               onClick={() => scrollToSection("contact")}
             >
               Contact
@@ -206,6 +212,12 @@ const Header = () => {
               onClick={() => scrollToSection("skills")}
             >
               Skills
+            </button>
+            <button
+              className="block w-full px-4 py-3 text-left transition-colors rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary"
+              onClick={() => scrollToSection("faq")}
+            >
+              FAQ
             </button>
             <button
               className="block w-full px-4 py-3 text-left transition-colors rounded-lg text-slate-800 dark:text-white hover:bg-primary/5 hover:text-primary"

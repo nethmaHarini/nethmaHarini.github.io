@@ -3,7 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nethma Harini | Portfolio</title>
+    <title>Nethma Harini | Aspiring Project Manager & Strategic Planner</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Nethma Harini - Aspiring Project Manager specializing in strategic planning, team coordination, and Agile methodologies. IT undergraduate with expertise in project delivery and technical leadership."
+    />
+    <meta
+      name="keywords"
+      content="Nethma Harini, Project Manager, Strategic Planning, Agile, Scrum, Team Coordination, IT Project Management, Software Development, Portfolio"
+    />
+    <meta name="author" content="Nethma Harini" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://nethma.me/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nethma.me/" />
+    <meta
+      property="og:title"
+      content="Nethma Harini | Aspiring Project Manager & Strategic Planner"
+    />
+    <meta
+      property="og:description"
+      content="Aspiring Project Manager specializing in strategic planning, team coordination, and Agile methodologies. Delivering measurable organizational success through clear communication and efficient execution."
+    />
+    <meta
+      property="og:image"
+      content="https://nethma.me/web-app-manifest-512x512.png"
+    />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:site_name" content="Nethma Harini Portfolio" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card (minimal - for professional sharing) -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Nethma Harini | Aspiring Project Manager"
+    />
+    <meta
+      name="twitter:description"
+      content="Strategic planning, team coordination, and Agile project management expertise."
+    />
+    <meta
+      name="twitter:image"
+      content="https://nethma.me/web-app-manifest-512x512.png"
+    />
 
     <!-- Favicon for modern browsers -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -34,6 +82,12 @@
 
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#CB0C14" />
+
+    <!-- Performance: Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
@@ -42,5 +96,165 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Structured Data (JSON-LD) for SEO, GEO, and AEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://nethma.me/#person",
+          "name": "Nethma Harini",
+          "url": "https://nethma.me",
+          "image": "https://nethma.me/web-app-manifest-512x512.png",
+          "jobTitle": "Aspiring Project Manager",
+          "description": "Aspiring Project Manager specializing in strategic planning, team coordination, and Agile methodologies. IT undergraduate with expertise in delivering measurable organizational success.",
+          "email": "nethmaharini03@gmail.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/nethma-harini",
+            "https://github.com/nethmaHarini"
+          ],
+          "knowsAbout": [
+            "Project Management",
+            "Strategic Planning",
+            "Agile Methodology",
+            "Scrum",
+            "Team Leadership",
+            "Risk Management",
+            "Stakeholder Communication",
+            "Software Development",
+            "React Native",
+            "Android Development"
+          ],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Project Manager",
+            "occupationalCategory": "15-1199.09",
+            "skills": "Project Planning, Risk Management, Agile & Scrum, Team Leadership, Resource Management"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://nethma.me/#website",
+          "url": "https://nethma.me",
+          "name": "Nethma Harini Portfolio",
+          "description": "Professional portfolio showcasing project management expertise, strategic planning capabilities, and software development projects.",
+          "publisher": {
+            "@id": "https://nethma.me/#person"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://nethma.me/#projects",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://nethma.me/#profilepage",
+          "mainEntity": {
+            "@id": "https://nethma.me/#person"
+          },
+          "url": "https://nethma.me",
+          "name": "Nethma Harini - Project Manager Portfolio"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://nethma.me/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://nethma.me/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About",
+              "item": "https://nethma.me/#about-me"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Projects",
+              "item": "https://nethma.me/#projects"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Skills",
+              "item": "https://nethma.me/#skills"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Contact",
+              "item": "https://nethma.me/#contact"
+            }
+          ]
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://nethma.me/#projects",
+          "name": "Featured Projects",
+          "description": "Portfolio of software development and project management projects",
+          "itemListElement": [
+            {
+              "@type": "CreativeWork",
+              "position": 1,
+              "name": "AI Music Separation & Player App",
+              "description": "Professional React Native music player with advanced AI-powered source separation capabilities. Load any song and separate it into individual vocal and instrumental tracks with studio-quality results.",
+              "keywords": "React Native, AI/ML, Audio Processing",
+              "creator": {
+                "@id": "https://nethma.me/#person"
+              },
+              "url": "https://github.com/nethmaHarini/MediaPlayer.git"
+            },
+            {
+              "@type": "SoftwareApplication",
+              "position": 2,
+              "name": "Book Diary App",
+              "description": "Personal book tracking and recommendation diary built for Android. Track reading progress, discover new books, and maintain a personal library with reviews and ratings.",
+              "applicationCategory": "LifestyleApplication",
+              "operatingSystem": "Android",
+              "keywords": "Android, Java/Kotlin, SQLite",
+              "creator": {
+                "@id": "https://nethma.me/#person"
+              },
+              "url": "https://github.com/nethmaHarini/BookDiary.git"
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 3,
+              "name": "FinTech Product Launch",
+              "description": "Managed end-to-end delivery of a mobile payment solution with 5k+ App Store downloads.",
+              "keywords": "Team Leadership, Scrum, FinTech",
+              "creator": {
+                "@id": "https://nethma.me/#person"
+              }
+            },
+            {
+              "@type": "CreativeWork",
+              "position": 4,
+              "name": "Digital Transformation Initiative",
+              "description": "Orchestrated company-wide digital transformation across 5 departments, achieving 85% efficiency increase.",
+              "keywords": "Change Management, Digital Strategy",
+              "creator": {
+                "@id": "https://nethma.me/#person"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "ContactPoint",
+          "@id": "https://nethma.me/#contact",
+          "contactType": "Professional Inquiry",
+          "email": "nethmaharini03@gmail.com",
+          "url": "https://nethma.me/#contact"
+        }
+      ]
+    }
+    </script>
   </body>
 </html>
