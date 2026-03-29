@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { trackProjectClick, trackOutboundLink } from '../analytics';
+import { trackProjectClick, trackOutboundLink } from "../analytics";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);

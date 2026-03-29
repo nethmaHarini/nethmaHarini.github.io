@@ -4,6 +4,20 @@
 User-agent: *
 Allow: /
 
+# Explicitly allow Brave Search crawler
+User-agent: BraveBot
+Allow: /
+
+# Explicitly allow other search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
 # Sitemap location
 Sitemap: https://nethma.me/sitemap.xml
 

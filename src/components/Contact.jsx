@@ -1,33 +1,33 @@
-import { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import { trackFormSubmission } from '../analytics';
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { trackFormSubmission } from "../analytics";
 
 const Contact = () => {
   const form = useRef();
   const [isLoading, setIsLoading] = useState(false);
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setStatus('');
+    setStatus("");
 
     try {
       await emailjs.sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
-      setStatus('success');
+      setStatus("success");
       form.current.reset();
-      
+
       // Track successful form submission
-      trackFormSubmission('contact_form');
+      trackFormSubmission("contact_form");
     } catch (error) {
-      console.error('Error sending email:', error);
-      setStatus('error');
+      console.error("Error sending email:", error);
+      setStatus("error");
     } finally {
       setIsLoading(false);
     }
@@ -78,7 +78,10 @@ const Contact = () => {
             aria-label="Contact form"
           >
             <div className="space-y-2">
-              <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-widest text-slate-500">
+              <label
+                htmlFor="contact-name"
+                className="text-xs font-bold uppercase tracking-widest text-slate-500"
+              >
                 Full Name *
               </label>
               <input
@@ -93,7 +96,10 @@ const Contact = () => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="contact-email" className="text-xs font-bold uppercase tracking-widest text-slate-500">
+              <label
+                htmlFor="contact-email"
+                className="text-xs font-bold uppercase tracking-widest text-slate-500"
+              >
                 Email Address *
               </label>
               <input
@@ -108,7 +114,10 @@ const Contact = () => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="contact-subject" className="text-xs font-bold uppercase tracking-widest text-slate-500">
+              <label
+                htmlFor="contact-subject"
+                className="text-xs font-bold uppercase tracking-widest text-slate-500"
+              >
                 Subject
               </label>
               <input
@@ -121,7 +130,10 @@ const Contact = () => {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-widest text-slate-500">
+              <label
+                htmlFor="contact-message"
+                className="text-xs font-bold uppercase tracking-widest text-slate-500"
+              >
                 Message *
               </label>
               <textarea
@@ -138,8 +150,8 @@ const Contact = () => {
             <button
               className={`w-full py-4 font-bold rounded-lg transition-all duration-300 ${
                 isLoading
-                  ? 'bg-primary/50 cursor-not-allowed'
-                  : 'btn-lift bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20'
+                  ? "bg-primary/50 cursor-not-allowed"
+                  : "btn-lift bg-primary hover:bg-primary/90 shadow-lg shadow-primary/20"
               } text-white`}
               type="submit"
               disabled={isLoading}
@@ -148,26 +160,39 @@ const Contact = () => {
               {isLoading ? (
                 <span className="flex items-center justify-center gap-2">
                   <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" className="opacity-25"/>
-                    <path fill="currentColor" className="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                      fill="none"
+                      className="opacity-25"
+                    />
+                    <path
+                      fill="currentColor"
+                      className="opacity-75"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    />
                   </svg>
                   Sending...
                 </span>
               ) : (
-                'Send Message'
+                "Send Message"
               )}
             </button>
 
             {/* Status Messages */}
-            {status === 'success' && (
+            {status === "success" && (
               <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4 text-green-400 text-center">
                 ✅ Message sent successfully! I'll get back to you soon.
               </div>
             )}
 
-            {status === 'error' && (
+            {status === "error" && (
               <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 text-red-400 text-center">
-                ❌ Failed to send message. Please try again or contact me directly.
+                ❌ Failed to send message. Please try again or contact me
+                directly.
               </div>
             )}
           </form>
