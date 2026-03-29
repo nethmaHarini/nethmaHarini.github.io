@@ -21,5 +21,8 @@ Allow: /
 # Sitemap location
 Sitemap: https://nethma.me/sitemap.xml
 
+# IndexNow key for instant indexing (Brave, Bing, Yandex)
+# Key file: https://nethma.me/e8c4f7a2b3d1e9f0a5c6b8d7e2f4a1c3.txt
+
 # Crawl delay (optional - helps prevent server overload)
 Crawl-delay: 1
