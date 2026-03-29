@@ -9,9 +9,9 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://nethma.me/web-app-manifest-512x512.png</image:loc>
-      <image:title>Nethma Harini - Project Manager Portfolio</image:title>
-      <image:caption>Professional portfolio showcasing project management and software development expertise</image:caption>
+      <image:loc>https://nethma.me/profile.png</image:loc>
+      <image:title>Nethma Harini - Aspiring Project Manager</image:title>
+      <image:caption>Professional portrait of Nethma Harini, IT undergraduate and aspiring project manager specializing in strategic planning and Agile methodologies</image:caption>
     </image:image>
   </url>
 
