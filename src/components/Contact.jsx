@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { trackFormSubmission } from '../analytics';
 
 const Contact = () => {
   const form = useRef();
@@ -21,6 +22,9 @@ const Contact = () => {
 
       setStatus('success');
       form.current.reset();
+      
+      // Track successful form submission
+      trackFormSubmission('contact_form');
     } catch (error) {
       console.error('Error sending email:', error);
       setStatus('error');
@@ -71,38 +75,44 @@ const Contact = () => {
             ref={form}
             className="space-y-6 bg-white/60 dark:bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-slate-200 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-none"
             onSubmit={handleSubmit}
+            aria-label="Contact form"
           >
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-slate-500">
+              <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-widest text-slate-500">
                 Full Name *
               </label>
               <input
+                id="contact-name"
                 name="from_name"
                 className="w-full bg-white dark:bg-black/50 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-black dark:text-white"
                 placeholder="Enter your full name here"
                 type="text"
                 required
+                aria-required="true"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-slate-500">
+              <label htmlFor="contact-email" className="text-xs font-bold uppercase tracking-widest text-slate-500">
                 Email Address *
               </label>
               <input
+                id="contact-email"
                 name="from_email"
                 className="w-full bg-white dark:bg-black/50 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-black dark:text-white"
                 placeholder="Enter your email here"
                 type="email"
                 required
+                aria-required="true"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-slate-500">
+              <label htmlFor="contact-subject" className="text-xs font-bold uppercase tracking-widest text-slate-500">
                 Subject
               </label>
               <input
+                id="contact-subject"
                 name="subject"
                 className="w-full bg-white dark:bg-black/50 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-black dark:text-white"
                 placeholder="Project Collaboration"
@@ -111,15 +121,17 @@ const Contact = () => {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-slate-500">
+              <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-widest text-slate-500">
                 Message *
               </label>
               <textarea
+                id="contact-message"
                 name="message"
                 className="w-full bg-white dark:bg-black/50 border border-slate-200 dark:border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-black dark:text-white"
                 placeholder="Tell me about your project..."
                 rows="4"
                 required
+                aria-required="true"
               ></textarea>
             </div>
 
@@ -131,6 +143,7 @@ const Contact = () => {
               } text-white`}
               type="submit"
               disabled={isLoading}
+              aria-label={isLoading ? "Sending message" : "Send message"}
             >
               {isLoading ? (
                 <span className="flex items-center justify-center gap-2">

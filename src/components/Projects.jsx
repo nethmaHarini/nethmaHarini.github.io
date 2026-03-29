@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackProjectClick, trackOutboundLink } from '../analytics';
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
@@ -116,6 +117,8 @@ const Projects = () => {
             }`}
             onClick={() => {
               if (project.link) {
+                trackProjectClick(project.title);
+                trackOutboundLink(project.link, project.title);
                 window.open(project.link, "_blank");
               }
             }}

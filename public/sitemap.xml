@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Main Portfolio Page -->
   <url>
@@ -7,6 +8,11 @@
     <lastmod>2026-03-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://nethma.me/web-app-manifest-512x512.png</image:loc>
+      <image:title>Nethma Harini - Project Manager Portfolio</image:title>
+      <image:caption>Professional portfolio showcasing project management and software development expertise</image:caption>
+    </image:image>
   </url>
 
   <!-- Portfolio Sections (anchor links for SEO) -->

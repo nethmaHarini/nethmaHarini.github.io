@@ -97,6 +97,9 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
+    <!-- Language declaration for accessibility -->
+    <script>document.documentElement.setAttribute('lang', 'en');</script>
+
     <!-- Structured Data (JSON-LD) for SEO, GEO, and AEO -->
     <script type="application/ld+json">
     {
@@ -111,27 +114,63 @@
           "jobTitle": "Aspiring Project Manager",
           "description": "Aspiring Project Manager specializing in strategic planning, team coordination, and Agile methodologies. IT undergraduate with expertise in delivering measurable organizational success.",
           "email": "nethmaharini03@gmail.com",
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "IT Undergraduate Program"
+          },
           "sameAs": [
             "https://www.linkedin.com/in/nethma-harini",
             "https://github.com/nethmaHarini"
           ],
           "knowsAbout": [
-            "Project Management",
-            "Strategic Planning",
-            "Agile Methodology",
-            "Scrum",
-            "Team Leadership",
-            "Risk Management",
-            "Stakeholder Communication",
-            "Software Development",
-            "React Native",
-            "Android Development"
+            {
+              "@type": "Thing",
+              "name": "Project Management",
+              "description": "Strategic planning, milestone tracking, and timeline alignment"
+            },
+            {
+              "@type": "Thing",
+              "name": "Agile Methodology",
+              "description": "Streamlining workflows and delivering value through iterative processes"
+            },
+            {
+              "@type": "Thing",
+              "name": "Team Leadership",
+              "description": "Empowering cross-functional teams to achieve high-performance outcomes"
+            },
+            {
+              "@type": "Thing",
+              "name": "Risk Management",
+              "description": "Identifying bottlenecks early and implementing mitigation strategies"
+            },
+            {
+              "@type": "Thing",
+              "name": "React Native Development",
+              "description": "Mobile app development with AI/ML integration"
+            },
+            {
+              "@type": "Thing",
+              "name": "Android Development",
+              "description": "Native Android applications using Java/Kotlin"
+            }
           ],
           "hasOccupation": {
             "@type": "Occupation",
             "name": "Project Manager",
             "occupationalCategory": "15-1199.09",
-            "skills": "Project Planning, Risk Management, Agile & Scrum, Team Leadership, Resource Management"
+            "skills": "Project Planning, Risk Management, Agile & Scrum, Team Leadership, Resource Management, Stakeholder Communication",
+            "responsibilities": "Leading cross-functional teams, managing project timelines, coordinating resources, ensuring stakeholder alignment, delivering measurable results"
+          },
+          "knowsLanguage": [
+            {
+              "@type": "Language",
+              "name": "English"
+            }
+          ],
+          "seeks": {
+            "@type": "JobPosting",
+            "title": "Project Manager Position",
+            "description": "Seeking opportunities in project management, team leadership, and strategic planning roles"
           }
         },
         {
@@ -198,18 +237,22 @@
           "@type": "ItemList",
           "@id": "https://nethma.me/#projects",
           "name": "Featured Projects",
-          "description": "Portfolio of software development and project management projects",
+          "description": "Portfolio of software development and project management projects demonstrating technical expertise and leadership",
+          "numberOfItems": 4,
           "itemListElement": [
             {
-              "@type": "CreativeWork",
+              "@type": "SoftwareSourceCode",
               "position": 1,
               "name": "AI Music Separation & Player App",
               "description": "Professional React Native music player with advanced AI-powered source separation capabilities. Load any song and separate it into individual vocal and instrumental tracks with studio-quality results.",
-              "keywords": "React Native, AI/ML, Audio Processing",
-              "creator": {
+              "keywords": "React Native, AI/ML, Audio Processing, Machine Learning, Mobile Development",
+              "programmingLanguage": "JavaScript",
+              "runtimePlatform": "React Native",
+              "codeRepository": "https://github.com/nethmaHarini/MediaPlayer.git",
+              "author": {
                 "@id": "https://nethma.me/#person"
               },
-              "url": "https://github.com/nethmaHarini/MediaPlayer.git"
+              "about": "Artificial Intelligence, Audio Processing, Mobile Applications"
             },
             {
               "@type": "SoftwareApplication",
@@ -218,29 +261,62 @@
               "description": "Personal book tracking and recommendation diary built for Android. Track reading progress, discover new books, and maintain a personal library with reviews and ratings.",
               "applicationCategory": "LifestyleApplication",
               "operatingSystem": "Android",
-              "keywords": "Android, Java/Kotlin, SQLite",
-              "creator": {
-                "@id": "https://nethma.me/#person"
+              "keywords": "Android, Java/Kotlin, SQLite, Mobile Development, Database Management",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
               },
-              "url": "https://github.com/nethmaHarini/BookDiary.git"
-            },
-            {
-              "@type": "CreativeWork",
-              "position": 3,
-              "name": "FinTech Product Launch",
-              "description": "Managed end-to-end delivery of a mobile payment solution with 5k+ App Store downloads.",
-              "keywords": "Team Leadership, Scrum, FinTech",
-              "creator": {
+              "codeRepository": "https://github.com/nethmaHarini/BookDiary.git",
+              "author": {
                 "@id": "https://nethma.me/#person"
               }
             },
             {
-              "@type": "CreativeWork",
+              "@type": "Project",
+              "position": 3,
+              "name": "FinTech Product Launch",
+              "description": "Managed end-to-end delivery of a mobile payment solution achieving 5,000+ App Store downloads through effective team leadership and Scrum methodology.",
+              "keywords": "Team Leadership, Scrum, FinTech, Product Management, Agile",
+              "result": {
+                "@type": "ItemList",
+                "itemListElement": [
+                  {
+                    "@type": "Thing",
+                    "name": "5,000+ App Store downloads"
+                  },
+                  {
+                    "@type": "Thing",
+                    "name": "Successful product launch"
+                  }
+                ]
+              },
+              "agent": {
+                "@id": "https://nethma.me/#person"
+              }
+            },
+            {
+              "@type": "Project",
               "position": 4,
               "name": "Digital Transformation Initiative",
-              "description": "Orchestrated company-wide digital transformation across 5 departments, achieving 85% efficiency increase.",
-              "keywords": "Change Management, Digital Strategy",
-              "creator": {
+              "description": "Orchestrated company-wide digital transformation across 5 departments, achieving 85% efficiency increase through strategic change management and digital strategy implementation.",
+              "keywords": "Change Management, Digital Strategy, Digital Transformation, Process Optimization",
+              "result": {
+                "@type": "ItemList",
+                "itemListElement": [
+                  {
+                    "@type": "QuantitativeValue",
+                    "name": "Efficiency Increase",
+                    "value": "85",
+                    "unitText": "Percent"
+                  },
+                  {
+                    "@type": "Thing",
+                    "name": "5 departments transformed"
+                  }
+                ]
+              },
+              "agent": {
                 "@id": "https://nethma.me/#person"
               }
             }
