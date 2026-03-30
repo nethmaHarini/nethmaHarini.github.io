@@ -5,8 +5,10 @@ const Hero = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
+
+        behavior: "smooth",
+        block: "start",
+
       });
     }
   };
@@ -26,19 +28,29 @@ const Hero = () => {
                   NETHMA HARINI
                 </h1>
                 <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light max-w-3xl mx-auto md:mx-0 leading-relaxed">
-                  <span className="whitespace-nowrap">Aspiring Project Manager</span> | <span className="whitespace-nowrap">Strategic Planner</span> | <span className="whitespace-nowrap">IT Undergraduate</span>
+
+                  <span className="whitespace-nowrap">
+                    Aspiring Project Manager
+                  </span>{" "}
+                  | <span className="whitespace-nowrap">Strategic Planner</span>{" "}
+                  | <span className="whitespace-nowrap">IT Undergraduate</span>
+
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <button
                   className="btn-lift px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/20 transition-all hover:shadow-primary/30 hover:shadow-xl"
-                  onClick={() => scrollToSection('projects')}
+
+                  onClick={() => scrollToSection("projects")}
+
                 >
                   View My Projects
                 </button>
                 <button
                   className="btn-lift px-8 py-4 border border-primary/50 dark:border-primary/40 text-primary font-bold rounded-xl hover:bg-primary/5 dark:hover:bg-primary/10 transition-all backdrop-blur-sm"
-                  onClick={() => scrollToSection('contact')}
+
+                  onClick={() => scrollToSection("contact")}
+
                 >
                   Let's Connect
                 </button>
@@ -52,12 +64,14 @@ const Hero = () => {
                 {/* Circular Frame */}
                 <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-full border border-primary/20 dark:border-primary/40 p-2 bg-white/50 dark:bg-black/20 backdrop-blur-sm">
                   <div className="w-full h-full rounded-full overflow-hidden border-2 border-primary shadow-xl shadow-primary/20">
-                    <div
-                      className="w-full h-full bg-slate-100 dark:bg-slate-800 bg-cover bg-center"
-                      style={{
-                        backgroundImage: `url(${profileImage})`,
-                      }}
-                    ></div>
+
+                    <img
+                      src={profileImage}
+                      alt="Nethma Harini - Aspiring Project Manager"
+                      className="w-full h-full object-cover"
+                      loading="eager"
+                    />
+
                   </div>
                 </div>
               </div>

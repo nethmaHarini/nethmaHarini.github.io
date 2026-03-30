@@ -17,25 +17,33 @@ const About = () => {
                   </p>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white tracking-tight leading-tight">
-                  About Me
+
+                  Strategic Project Manager
+
                 </h2>
               </div>
 
               {/* Paragraphs */}
               <div className="space-y-6 max-w-4xl">
                 <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-200">
-                  I enjoy shaping ideas into solutions that move projects forward.
+
+                  I enjoy shaping ideas into solutions that move projects
+                  forward.
                 </p>
 
                 <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-200">
-                  As an aspiring Project Manager, I focus on planning tasks, coordinating teams, and keeping projects
-                  moving in the right direction. I am comfortable working within technical environments and understanding
-                  how systems and processes connect.
+                  As an aspiring Project Manager, I focus on planning tasks,
+                  coordinating teams, and keeping projects moving in the right
+                  direction. I am comfortable working within technical
+                  environments and understanding how systems and processes
+                  connect.
                 </p>
 
                 <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-200">
-                  I value clear communication, simple planning, and steady progress. My goal is to deliver work that is
-                  organized, efficient, and aligned with defined objectives.
+                  I value clear communication, simple planning, and steady
+                  progress. My goal is to deliver work that is organized,
+                  efficient, and aligned with defined objectives.
+
                 </p>
               </div>
             </div>
@@ -44,7 +52,11 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="group flex flex-col items-center text-center gap-4 p-6 rounded-xl transition-colors hover:bg-primary/5">
                 <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <span className="material-symbols-outlined text-primary text-2xl">analytics</span>
+
+                  <span className="material-symbols-outlined text-primary text-2xl">
+                    analytics
+                  </span>
+
                 </div>
                 <div>
                   <h4 className="text-black dark:text-white font-bold text-lg leading-tight mb-2">
@@ -58,7 +70,11 @@ const About = () => {
 
               <div className="group flex flex-col items-center text-center gap-4 p-6 rounded-xl transition-colors hover:bg-primary/5">
                 <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <span className="material-symbols-outlined text-primary text-2xl">groups</span>
+
+                  <span className="material-symbols-outlined text-primary text-2xl">
+                    groups
+                  </span>
+
                 </div>
                 <div>
                   <h4 className="text-black dark:text-white font-bold text-lg leading-tight mb-2">
@@ -72,14 +88,21 @@ const About = () => {
 
               <div className="group flex flex-col items-center text-center gap-4 p-6 rounded-xl transition-colors hover:bg-primary/5">
                 <div className="w-12 h-12 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <span className="material-symbols-outlined text-primary text-2xl">verified</span>
+
+                  <span className="material-symbols-outlined text-primary text-2xl">
+                    verified
+                  </span>
+
                 </div>
                 <div>
                   <h4 className="text-black dark:text-white font-bold text-lg leading-tight mb-2">
                     Result Driven
                   </h4>
                   <p className="text-sm text-slate-500 leading-relaxed">
-                    Delivering measurable organizational success through Agile methodologies.
+
+                    Delivering measurable organizational success through Agile
+                    methodologies.
+
                   </p>
                 </div>
               </div>
